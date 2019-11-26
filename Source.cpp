@@ -78,13 +78,6 @@ void HuffmanCodes(vector<char> data, vector<int> freq, int size)
 		right = minHeap.top();
 		minHeap.pop();
 
-		// Create a new internal node with 
-		// frequency equal to the sum of the 
-		// two nodes frequencies. Make the 
-		// two extracted node as left and right children 
-		// of this new node. Add this node 
-		// to the min heap '$' is a special value 
-		// for internal nodes, not used 
 		top = new MinHeapNode('$', left->freq + right->freq);
 
 		top->left = left;
@@ -97,58 +90,6 @@ void HuffmanCodes(vector<char> data, vector<int> freq, int size)
 	// the Huffman tree built above 
 	printCodes(minHeap.top(), "");
 }
-
-//char* letters(const string& s) {
-//	char* p = new char[s.length()];
-//	// tao bang ma ASCII
-//	vector<char> ascii{};
-//	for (auto i = 0; i <= 127; ++i) {
-//		ascii.push_back(char(i));
-//	}
-//	//
-//	
-//	for (size_t j = 0; j < s.length(); ++j) {
-//		for (auto i = 0; i < ascii.size(); ++i) {
-//
-//		}
-//	}
-//	
-//	
-//	return p;
-//}
-//
-//int* freq(const char* s) {
-//
-//	/*int numberOfChar = 0;*/
-//	// so phan tu cua chuoi s
-//	int size = sizeof(s) / sizeof(s[0]);
-//
-//	// tao bang ma ascii
-//	vector<char> ascii{};
-//	for (auto i = 0; i <= 127; ++i) {
-//		ascii.push_back(char(i));
-//	}
-//	// tao bang chua tan suat xuat hien cua cac ky tu
-//	int* p = new int[1];
-//
-//	for (auto i = 0; i <= 127; ++i) {
-//		int count = 0;
-//		for (auto j = 0; j < size; ++j) {
-//			if (s[j] == ascii[i]) {
-//				++count;
-//			}
-//			else {
-//				break;
-//			}
-//		}
-//
-//	}
-//	
-//	
-//
-//	return p;
-//}
-// Driver program to test above functions 
 
 void _freq(const string& s, vector<char> &arr, vector<int> &freq) {
 	std::vector<char> ascii{};
@@ -189,20 +130,8 @@ void _freq(const string& s, vector<char> &arr, vector<int> &freq) {
 int main()
 {
 	std::string s{};
-	std::cout << "Nhap cai gi do de ma hoa(Huffman): " << '\n';
+	std::cout << "Nhap thong tin ma hoa(Huffman): " << '\n';
 	getline(cin, s);
-	/*string line{};
-	ifstream myfile("A.txt");
-	if (myfile.is_open())
-	{
-		while (getline(myfile, line))
-		{
-			line += line;
-		}
-		myfile.close();
-	}
-	else cout << "Unable to open file";
-	cout << line;*/
 	vector<char> arr{};
 	vector<int> freq{};
 	cout << "Tan suat xuat hien: " << '\n';
@@ -212,5 +141,3 @@ int main()
 	HuffmanCodes(arr, freq, size);
 	return 0;
 }
-
-// This code is contributed by Aditya Goel 
